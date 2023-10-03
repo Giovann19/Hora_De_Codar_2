@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+//exercicio 1 ----------
+
+function numeros () {
+
+    var primeiro_numero = parseFloat(prompt("Digite o primeiro número"));
+
+// Solicita ao usuário que insira o segundo número
+var segundo_numero = parseFloat(prompt("Digite o segundo número"));
+
+// Verifica se as entradas são válidas (números)
+if (isNaN(primeiro_numero) || isNaN(segundo_numero)) {
+  alert("Por favor, insira números válidos.");
+} else {
+  // Compara os números e exibe o maior deles
+  if (primeiro_numero > segundo_numero) {
+    alert("O número " + primeiro_numero + " é o maior.");
+    numeros();
+  } else if (segundo_numero > primeiro_numero) {
+    alert("O número " + segundo_numero + " é o maior.");
+    numeros();
+  } else {
+    alert("Os números são iguais.");
+    numeros();
+  }
+
+
+
+}
+ }
+
+numeros();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//exercicio 2 ----------
+
+// Faça um programa que leia um valor informado pelo usuário e diga se o valor informado é positivo, negativo ou zero.
+function numeros () {
+
+var primeiro_numero = parseFloat(prompt("Digite o primeiro número"));
+
+// Verifica se as entradas são válidas (números)
+if (isNaN(primeiro_numero)) {
+alert("Por favor, insira números válidos.");
+} else {
+// Compara os números e exibe o maior deles
+if (primeiro_numero >= 0) {
+alert("O número " + primeiro_numero + " é positivo");
+numeros();
+} else if ( primeiro_numero < 0) {
+alert("O número " + primeiro_numero + " é negativo.");
+numeros();
+} else if (primeiro_numero === 0) {
+
+alert("Esse número é " + primeiro_numero);
+numeros();
+}
+
+
+
+}
+}
+
+numeros();
+
+
+
+
+
+
+
+
+
+
+
+
+
+//exercicio 3 ----------
+
+//Faça um programa para ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles.
+
+function numeros() {
+  var primeiro_numero = parseFloat(prompt("Digite o primeiro número"));
+  var segundo_numero = parseFloat(prompt("Digite o segundo número"));
+  var terceiro_numero = parseFloat(prompt("Digite o terceiro número"));
+
+  if (isNaN(primeiro_numero) || isNaN(segundo_numero) || isNaN(terceiro_numero)) {
+    alert("Por favor, insira números válidos.");
+  } else {
+    if (primeiro_numero >= segundo_numero && primeiro_numero >= terceiro_numero) {
+      alert("O número " + primeiro_numero + " é o maior.");
+    } else if (segundo_numero >= primeiro_numero && segundo_numero >= terceiro_numero) {
+      alert("O número " + segundo_numero + " é o maior.");
+    } else {
+      alert("O número " + terceiro_numero + " é o maior.");
+    }
+  }
+
+  var continuar = confirm("Deseja verificar outros números?");
+  if (continuar) {
+    numeros();
+  }
+}
+
+numeros();
+
+
+
+
+
+
+
+
+
+
+
+//exercicio 4 ----------
+
+function numero1() {
+
+
+// Solicita ao usuário que insira os três valores distintos
+var valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+var valor2 = parseFloat(prompt("Digite o segundo valor:"));
+var valor3 = parseFloat(prompt("Digite o terceiro valor:"));
+
+// Verifica se os valores inseridos são números válidos
+if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3)) {
+  alert("Por favor, insira valores válidos.");
+} else {
+  // Encontra o maior valor
+  var maior = Math.max(valor1, valor2, valor3);
+
+  // Encontra o segundo maior valor usando Math.min
+  var segundoMaior = Math.min(Math.max(valor1, valor2), Math.max(valor1, valor3), Math.max(valor2, valor3));
+
+  // Calcula a soma dos dois maiores valores
+  var somaDosMaiores = maior + segundoMaior;
+
+  alert("A soma dos dois maiores valores é: " + somaDosMaiores);
+  numero1();
+}
+
+
+ }
+
+ numero1();
+
+
+
+
+
+
+
+
+
+
+
+
+//exercicio 5 ----------
+
+
+ function numero4() {
+
+var valores = []; // Array para armazenar os valores informados pelo usuário
+var soma = 0;
+
+// Solicita ao usuário que insira 6 valores e os armazena no array
+for (var i = 0; i < 6; i++) {
+var valor = parseFloat(prompt("Digite o " + (i + 1) + "º valor:"));
+
+if (isNaN(valor)) {
+  alert("Por favor, insira um valor válido.");
+  i--; // Volta para a iteração anterior se um valor inválido for inserido
+} else {
+  valores.push(valor); // Adiciona o valor válido ao array
+  soma += valor; // Calcula a soma dos valores inseridos
+}
+}
+
+// Exibe os valores informados pelo usuário
+alert("Valores informados: " + valores.join(", "));
+
+// Calcula a média aritmética
+var media = soma / valores.length;
+
+// Exibe a média
+alert("A média aritmética dos valores é: " + media);
+
+
+numero1();
+}
+
+
+
+
+numero4();
+
+
+
+//exercicio 7 ----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function oi () {
+
+
+
+
+  
+
+var numeros = []; // Array para armazenar os números informados pelo usuário
+var soma = 0;
+
+// Solicita ao usuário que insira 6 números e os armazena no array
+for (var i = 0; i < 6; i++) {
+  var numero = parseFloat(prompt("Digite o " + (i + 1) + "º número:"));
+
+  if (!isNaN(numero)) {
+    numeros.push(numero); // Adiciona o número ao array
+    if (numero < 72) {
+      soma += numero; // Soma apenas os números inferiores a 72
+    }
+  } else {
+    alert("Por favor, insira um número válido.");
+    i--; // Volta para a iteração anterior se um número inválido for inserido
+  }
+}
+
+// Exibe todos os valores informados pelo usuário
+alert("Valores informados: " + numeros.join(", "));
+
+// Exibe a soma dos números inferiores a 72
+alert("Soma dos números inferiores a 72: " + soma);
+oi();
+
+  }
+  oi ();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Exercicio 8
+
+
+  function gabriel () {
+
+
+var soma = 0;
+var contador = 0;
+
+// Solicita ao usuário que insira quatro números no intervalo entre 0 e 10
+while (contador < 4) {
+  var numero = parseFloat(prompt("Digite o " + (contador + 1) + "º número (entre 0 e 10):"));
+
+  if (!isNaN(numero) && numero >= 0 && numero <= 10) {
+    soma += numero; // Adiciona o número à soma se estiver no intervalo
+    contador++;
+  } else {
+    alert("Por favor, insira um número válido no intervalo de 0 a 10.");
+  }
+}
+
+// Calcula a média dos números
+var media = soma / 4;
+
+// Verifica se a média é maior que 5 e fornece a mensagem apropriada
+if (media > 5) {
+  alert("Você passou no teste.");
+  gabriel();
+} else {
+  alert("Tente novamente.");
+  gabriel();
+}
+
+}
+
+gabriel();
+
+
+
+// Exercicio 9
+
+
+
+
+
+
+
+
+
+
+function ano () { 
+
+var limite_de_idade = 1930
+var ano = 2007;
+var usuario = parseInt(prompt("Informe o ano em que nasceu"));
+
+if (usuario > ano) {
+alert("Você não pode votar!");
+} else {
+alert("Você pode votar!");
+} 
+if (usuario < limite_de_idade) {
+alert ("Porém é o limite de idade, não possui registro de pessoas acima de 100 anos querendo voltar!");
+ano ();
+}
+
+}
+
+ano ();
+
+
+
+
+
+
+// Exercicio 10
+
+var sexo = parseInt(prompt("Qual o seu sexo? Sendo 1-Feminino 2-Masculino"));
+        var altura = parseFloat(prompt("Qual a sua altura? Em centímetros"));
+        if(sexo==1){
+            var pesoIdeal = 52+(0.67*(altura-152.4));
+            document.write("O seu peso ideal é: "+pesoIdeal);
+        }else if(sexo==2){
+            var pesoIdeal = 52+(0.75*(altura-152.4));
+            document.write("O seu peso ideal é: "+pesoIdeal);
+        }else{
+            document.write("Você digitou um valor inválido");
+        }
+
+
+
+
+
+
+
+
+
+
+        
+    // Exercicio 11
+    
+        function menu () {
+
+
+  
+   
+// Função para realizar a adição
+function adicao(n1, n2) {
+return n1 + n2;
+}
+
+// Função para realizar a subtração
+function subtracao(n1, n2) {
+return n1 - n2;
+}
+
+// Função para realizar a multiplicação
+function multiplicacao(n1, n2) {
+return n1 * n2;
+}
+
+// Função para realizar a divisão
+function divisao(n1, n2) {
+if (n2 === 0) {
+  return "Não é possível dividir por zero.";
+} else {
+  return n1 / n2;
+}
+}
+
+// Solicita o usuário a escolher uma operação
+var operacao = prompt("Escolha uma operação:\n1 - Adição\n2 - Subtração\n3 - Multiplicação\n4 - Divisão");
+
+// Solicita os números para a operação
+var numero1 = parseFloat(prompt("Digite o primeiro número:"));
+var numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+// Realiza a operação escolhida
+var resultado;
+switch (operacao) {
+case "1":
+  resultado = adicao(numero1, numero2);
+  menu();
+  break;
+case "2":
+  resultado = subtracao(numero1, numero2);
+  menu();
+  break;
+case "3":
+  resultado = multiplicacao(numero1, numero2);
+  break;
+  menu();
+case "4":
+  resultado = divisao(numero1, numero2);
+ menu();
+  break;
+default:
+  resultado = "Operação inválida.";
+}
+
+// Exibe o resultado
+alert("Resultado: " + resultado);
+
+
+} menu ();
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
